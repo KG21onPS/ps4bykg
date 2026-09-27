@@ -1,24 +1,53 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <title>KG PS4 Host</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PS4 by KG</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.webmanifest">
 </head>
-
 <body>
+  <main class="wrap">
+    <section class="card">
+      <h1>PS4 by KG</h1>
+      <p class="sub">Host statique GitHub Pages pour PS4</p>
 
-<h1>KG PS4 Host</h1>
+      <div class="grid">
+        <div class="item">
+          <span class="label">Firmware détecté</span>
+          <strong id="firmware">Détection...</strong>
+        </div>
+        <div class="item">
+          <span class="label">Navigateur</span>
+          <strong id="browser">Détection...</strong>
+        </div>
+        <div class="item">
+          <span class="label">Payload</span>
+          <strong id="payloadName">payloads/goldhen.bin</strong>
+        </div>
+        <div class="item">
+          <span class="label">État</span>
+          <strong id="status">Prêt</strong>
+        </div>
+      </div>
 
-<p id="status">
-    Prêt.
-</p>
+      <div class="buttons">
+        <button id="loadBtn">Charger le BIN</button>
+        <button id="cacheBtn" class="secondary">Mettre en cache hors-ligne</button>
+        <button id="clearBtn" class="secondary">Vider le cache</button>
+      </div>
 
-<button onclick="loadPayload()">
-    Charger GoldHEN
-</button>
+      <pre id="log" class="log"></pre>
 
-<script src="js/loader.js"></script>
+      <p class="note">
+        Ce site charge le fichier .bin depuis GitHub Pages et le conserve
+        en mémoire côté navigateur. Il ne contient pas d'exploit et
+        n'exécute pas le payload à lui seul.
+      </p>
+    </section>
+  </main>
 
+  <script src="js/host.js"></script>
 </body>
 </html>
